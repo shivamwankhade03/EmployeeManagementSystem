@@ -1,0 +1,36 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <table>
+        <tr>
+            <td><label for="id">Emp Id: </label></td>
+            <td> <input id="id" type="number" formControlName="id" ></td>
+        </tr>
+    
+        <tr>
+            <td> <label for="name">Employee Name: </label></td>
+            <input id="name" type="text" formControlName="name" maxlength="30">
+        </tr>
+        <tr>
+            <td> <label for="location">Location: </label></td>
+            <select id="location" formControlName="location">
+                <option value="Pune">Pune</option>
+                <option value="Banglore">Banglore</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Noida">Noida</option>
+            </select>
+        </tr>
+        <tr>
+            <td> <label for="email">Email: </label></td>
+            <input id="email" type="email" formControlName="email">
+        </tr>
+        <tr>
+            <td><label for="mobile">Mobile: </label></td>
+            <input id="mobile" type="number" formControlName="mobile">
+        </tr>
+    
+        <tr>
+            <td> <button style="margin: 38px;" type="submit" [disabled]="!employeeForm.valid">Update</button></td>
+        </tr>
+    </table>
+  </form>
+
+ 

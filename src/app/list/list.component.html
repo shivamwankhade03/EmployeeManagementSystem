@@ -1,0 +1,42 @@
+<h5>Count :{{employees.length}} </h5>
+<h5>Filter</h5>
+<div class="search">
+  <label for="employee-name">Employee name: </label>
+  <input type="text" [(ngModel)]="employeeName" id="employee-name">
+
+  <!-- <button type="button" [disabled]="!heroName"
+    (click)="add(heroName)">Add hero</button> -->
+  <button type="button" (click)="search(employeeName)">
+    Search
+  </button>
+</div>
+ 
+ 
+ <table>
+        <tr>
+          <th>Emp ID</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>Edit</th>
+          <th>Delete</th>
+          
+        </tr>
+        <tr *ngFor="let employee of employees">
+          <td><a [routerLink]="['/details',employee.id]">{{employee.id}}</a></td>
+          <td>{{employee.name}}</td>
+          <td>{{employee.location}}</td>
+          <td>{{employee.email}}</td>
+          <td>{{employee.mobile}}</td>
+          <td><a [routerLink]="['/edit',employee.id]"><button type="button" class="edit" title="edit hero"
+            >
+            Edit
+          </button></a></td>
+          <td><button type="button" class="delete" title="delete hero"
+            (click)="delete(employee)">
+            Delete
+          </button></td>
+        
+        </tr>
+      </table>
